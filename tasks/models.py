@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 class TodoItem(models.Model):
@@ -22,6 +23,8 @@ class TodoItem(models.Model):
     priority = models.IntegerField(
         "Приоритет", choices=PRIORITY_CHOICES, default=PRIORITY_MEDIUM
     )
+
+    tags = TaggableManager()
 
     def __str__(self):
         return self.description.lower()
