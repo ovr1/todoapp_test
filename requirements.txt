@@ -64,7 +64,6 @@ pip-tools
 pluggy
 psycopg2
 py
-py-postgresql
 py-trello
 pyasn1	
 pycparser
