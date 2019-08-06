@@ -62,7 +62,6 @@ pdoc
 pip	
 pip-tools
 pluggy	
-psycopg2
 py
 py-postgresql
 py-trello
