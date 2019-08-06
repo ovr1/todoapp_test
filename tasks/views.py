@@ -19,6 +19,10 @@ from django.conf.urls.static import static
 def Index(request):
     return render(request, "Index.html")
 
+class TaskDetailsView(DetailView):
+    model = TodoItem
+    template_name = 'tasks/details.html'
+
 @login_required
 def index(request):
     return HttpResponse("Вы можете зарегестрироваться ('account/registre'),<br> или войти, если вы зарегистрированы ('account/login'),<br>а затем посмотреть и откорректироовать свои задачи на день ('tasks/list'). <br><h2> УДАЧИ!</h2>")
