@@ -59,9 +59,10 @@ ordereddict
 packaging	
 pandas	
 pdoc	
-pip	
+pip
 pip-tools
-pluggy	
+pluggy
+psycopg2
 py
 py-postgresql
 py-trello
