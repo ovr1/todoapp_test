@@ -14,7 +14,9 @@ from tasks.forms import AddTaskForm, TodoItemExportForm, TodoItemForm
 from tasks.models import TodoItem
 from django.shortcuts import redirect, render, get_object_or_404
 from taggit.models import Tag
-from django.conf.urls.static import static
+
+
+
 
 def Index(request):
     return render(request, "Index.html")
@@ -22,6 +24,8 @@ def Index(request):
 class TaskDetailsView(DetailView):
     model = TodoItem
     template_name = 'tasks/details.html'
+
+
 
 @login_required
 def index(request):
@@ -114,10 +118,6 @@ class TaskEditView(LoginRequiredMixin, View):
         form = TodoItemForm(instance=t)
         return render(request, "tasks/edit.html", {"form": form, "task": t})
 
-
-class TaskDetailsView(LoginRequiredMixin, DetailView):
-    model = TodoItem
-    template_name = "tasks/details.html"
 
 
 class TaskExportView(LoginRequiredMixin, View):
